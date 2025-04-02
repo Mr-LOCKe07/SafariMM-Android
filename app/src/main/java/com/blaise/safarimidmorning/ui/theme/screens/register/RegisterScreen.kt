@@ -42,12 +42,15 @@ fun Register_Screen(navController: NavHostController) {
     var lastname by remember { mutableStateOf(TextFieldValue("")) }
     var email by remember { mutableStateOf(TextFieldValue("")) }
     var password by remember { mutableStateOf(TextFieldValue(""))}
+
     Column (
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
         .fillMaxWidth()
         .background(Color.Black)){
+
+        Spacer(modifier = Modifier.height(50.dp))
         Text(text = "Register Page",
             fontSize = 35.sp,
             fontFamily = FontFamily.Monospace,
