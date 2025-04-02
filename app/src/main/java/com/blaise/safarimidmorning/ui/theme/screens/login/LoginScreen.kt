@@ -32,10 +32,12 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import org.w3c.dom.Text
 
 @Composable
-fun Login_Screen(modifier: Modifier = Modifier) {
+fun Login_Screen(navController: NavHostController) {
     var email by remember { mutableStateOf (TextFieldValue("")) }
     var password by remember { mutableStateOf(TextFieldValue("")) }
 
@@ -94,5 +96,5 @@ fun Login_Screen(modifier: Modifier = Modifier) {
 @Preview
 @Composable
 private fun LoginPrev() {
-    Login_Screen()
+    Login_Screen(rememberNavController())
 }

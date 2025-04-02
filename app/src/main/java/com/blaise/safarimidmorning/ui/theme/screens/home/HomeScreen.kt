@@ -2,6 +2,7 @@ package com.blaise.safarimidmorning.ui.theme.screens.home
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -11,6 +12,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
@@ -24,17 +26,21 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import com.blaise.safarimidmorning.R
+import com.blaise.safarimidmorning.navigation.ROUTE_LOGIN
+import com.blaise.safarimidmorning.navigation.ROUTE_REGISTER
 
 
 @Composable
-fun Home_Screen() {
+fun Home_Screen(navController: NavHostController) {
     Column (modifier = Modifier
         .fillMaxSize()
         .background(Color.Black),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center){
-        Text(text = "Frontier",
+        Text(text = "Welcome to,",
             color = Color.White,
             fontSize = 50.sp,
             fontFamily = FontFamily.Cursive,
@@ -54,7 +60,7 @@ fun Home_Screen() {
                 fontFamily = FontFamily.SansSerif
             )
         Spacer(modifier = Modifier.height(50.dp))
-        Button(onClick = { /*TODO*/},
+        Button(onClick = { navController.navigate(ROUTE_LOGIN)},
             modifier = Modifier.width(300.dp),
             colors = ButtonDefaults.buttonColors(
                 containerColor = Color.LightGray
@@ -66,14 +72,16 @@ fun Home_Screen() {
             )
         }
         Spacer(modifier = Modifier.height(50.dp))
-        Button(onClick = { /*TODO*/},
+        Button(onClick = { navController.navigate(ROUTE_REGISTER)},
             modifier = Modifier.width(300.dp),
             colors = ButtonDefaults.buttonColors(
                 containerColor = Color.LightGray
             )) {
             Text(text = "Register",
                 fontSize = 30.sp,
-                color = Color.Black)
+                color = Color.Black,
+                fontFamily = FontFamily.SansSerif,
+            )
         }
     }
 }
@@ -81,5 +89,5 @@ fun Home_Screen() {
 @Preview
 @Composable
 private fun HomePreview() {
-    Home_Screen()
+    Home_Screen(rememberNavController())
 }

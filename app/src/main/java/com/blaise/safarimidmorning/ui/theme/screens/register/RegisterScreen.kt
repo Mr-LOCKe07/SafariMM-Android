@@ -33,12 +33,13 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 
 @Composable
-fun Register_Screen(modifier: Modifier = Modifier) {
-    var first_name by remember { mutableStateOf(TextFieldValue("")) }
-    var last_name by remember { mutableStateOf(TextFieldValue("")) }
-    var phone_number by remember { mutableStateOf(TextFieldValue()) }
+fun Register_Screen(navController: NavHostController) {
+    var firstname by remember { mutableStateOf(TextFieldValue("")) }
+    var lastname by remember { mutableStateOf(TextFieldValue("")) }
     var email by remember { mutableStateOf(TextFieldValue("")) }
     var password by remember { mutableStateOf(TextFieldValue(""))}
     Column (
@@ -53,8 +54,8 @@ fun Register_Screen(modifier: Modifier = Modifier) {
             color = Color.White)
 
         Spacer(modifier = Modifier.height(40.dp))
-        OutlinedTextField(value =first_name,
-            onValueChange = {first_name=it},
+        OutlinedTextField(value =firstname,
+            onValueChange = {firstname=it},
             label = {Text(text = "Enter first name",
                 color = Color.White)},
             leadingIcon = {Icon(
@@ -64,9 +65,9 @@ fun Register_Screen(modifier: Modifier = Modifier) {
             modifier = Modifier.padding(16.dp)
         )
 
-        Spacer(modifier = Modifier.height(5.dp))
-        OutlinedTextField(value = last_name,
-            onValueChange = {last_name=it},
+        Spacer(modifier = Modifier.height(10.dp))
+        OutlinedTextField(value = lastname,
+            onValueChange = {lastname=it},
             label = {Text(text = "Enter last name",
                 color = Color.White)},
             leadingIcon = {Icon(
@@ -76,19 +77,7 @@ fun Register_Screen(modifier: Modifier = Modifier) {
             modifier = Modifier.padding(16.dp)
         )
 
-        Spacer(modifier = Modifier.height(5.dp))
-        OutlinedTextField(value = phone_number,
-            onValueChange = {phone_number=it},
-            label = {Text(text = "Enter phone number",
-                color = Color.White)},
-            leadingIcon = {Icon(
-                Icons.Default.Call,
-                contentDescription = "Phone Number")},
-            shape = RoundedCornerShape(20.dp),
-            modifier = Modifier.padding(16.dp)
-        )
-
-        Spacer(modifier = Modifier.height(5.dp))
+        Spacer(modifier = Modifier.height(10.dp))
         OutlinedTextField(value = email,
             onValueChange = {email=it},
             label = {Text(text = "Enter email",
@@ -100,7 +89,7 @@ fun Register_Screen(modifier: Modifier = Modifier) {
             modifier = Modifier.padding(16.dp)
         )
 
-        Spacer(modifier = Modifier.height(5.dp))
+        Spacer(modifier = Modifier.height(10.dp))
         OutlinedTextField(value = password,
             onValueChange = {password=it},
             label = {Text(text = "Enter password",
@@ -121,7 +110,8 @@ fun Register_Screen(modifier: Modifier = Modifier) {
             Text(text = "Register",
                 fontFamily = FontFamily.Monospace,
                 fontSize = 30.sp,
-                color = Color.Black
+                color = Color.Red
+
             )
         }
     }
@@ -130,5 +120,5 @@ fun Register_Screen(modifier: Modifier = Modifier) {
 @Preview
 @Composable
 private fun RegisterPrev() {
-    Register_Screen()
+    Register_Screen(rememberNavController())
 }
