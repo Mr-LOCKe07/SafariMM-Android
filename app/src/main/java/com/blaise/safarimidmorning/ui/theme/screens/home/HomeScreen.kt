@@ -1,5 +1,6 @@
 package com.blaise.safarimidmorning.ui.theme.screens.home
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -39,19 +40,21 @@ fun Home_Screen(navController: NavHostController) {
         .fillMaxSize()
         .background(Color.Black),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center){
+        verticalArrangement = Arrangement.Center) {
         Text(text = "Welcome to,",
             color = Color.White,
             fontSize = 50.sp,
             fontFamily = FontFamily.Cursive,
             fontWeight = FontWeight.Bold
         )
+
         Spacer(modifier = Modifier.height(20.dp))
         Image(painter = painterResource(id = R.drawable.logo),
         contentDescription = "logo",
         modifier = Modifier
             .fillMaxWidth()
             .height(200.dp))
+
         Spacer(modifier = Modifier.height(20.dp))
             Text(
                 text = "An app with unimaginable potential, all at your fingertips.",
@@ -63,24 +66,29 @@ fun Home_Screen(navController: NavHostController) {
         Button(onClick = { navController.navigate(ROUTE_LOGIN)},
             modifier = Modifier.width(300.dp),
             colors = ButtonDefaults.buttonColors(
-                containerColor = Color.LightGray
-            )) {
+                containerColor = Color.Transparent
+            ),
+            border = BorderStroke(2.dp, Color.White)) {
             Text(
                 text = "Login",
                 fontSize = 30.sp,
-                color =Color.Black
+                color =Color.Red,
+                fontFamily = FontFamily.Serif
             )
         }
+
         Spacer(modifier = Modifier.height(50.dp))
         Button(onClick = { navController.navigate(ROUTE_REGISTER)},
             modifier = Modifier.width(300.dp),
             colors = ButtonDefaults.buttonColors(
-                containerColor = Color.LightGray
-            )) {
+                containerColor = Color.Transparent
+            ),
+            border = BorderStroke(2.dp, Color.White)
+        ) {
             Text(text = "Register",
                 fontSize = 30.sp,
-                color = Color.Black,
-                fontFamily = FontFamily.SansSerif,
+                color = Color.Cyan,
+                fontFamily = FontFamily.Serif,
             )
         }
     }
