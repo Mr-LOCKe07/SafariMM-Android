@@ -60,7 +60,7 @@ fun Register_Screen(navController: NavHostController) {
         Text(text = "Register",
             fontSize = 35.sp,
             fontFamily = FontFamily.Serif,
-            color = Color.White)
+            color = Color.Cyan)
 
         Spacer(modifier = Modifier.height(40.dp))
         OutlinedTextField(value =firstname,
@@ -138,8 +138,12 @@ fun Register_Screen(navController: NavHostController) {
             )
         }
 
-        Spacer(modifier = Modifier.height(20.dp))
-        Text(text = "Already have an account?" + "Click to Login",
+        Spacer(modifier = Modifier.height(40.dp))
+        Text(text = "Already have an account?",
+            color = Color.Magenta,
+            fontSize =20.sp,
+            fontFamily = FontFamily.Serif)
+        Text(text = "Click to Login",
             modifier = Modifier.clickable { navController.navigate(ROUTE_LOGIN) },
             color = Color.Red,
             fontFamily = FontFamily.Serif,

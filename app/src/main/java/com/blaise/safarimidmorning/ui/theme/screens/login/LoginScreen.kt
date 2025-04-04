@@ -52,7 +52,7 @@ fun Login_Screen(navController: NavHostController) {
             .fillMaxSize()
             .background(Color.Black)) {
         Text(text = "Login",
-            color = Color.White,
+            color = Color.Red,
             fontSize = 35.sp,
             fontFamily = FontFamily.Serif
         )
@@ -97,10 +97,14 @@ fun Login_Screen(navController: NavHostController) {
             )
         }
 
-        Spacer(modifier = Modifier.height(20.dp))
-        Text(text = "Don't have an account?" + "Click to Register",
+        Spacer(modifier = Modifier.height(40.dp))
+        Text(text = "Don't have an account?",
+            color = Color.Magenta,
+            fontSize = 20.sp,
+            fontFamily = FontFamily.Serif)
+        Text(text = "Click to Register",
             modifier = Modifier.clickable { navController.navigate(ROUTE_REGISTER) },
-            color = Color.Red,
+            color = Color.Cyan,
             fontFamily = FontFamily.Serif,
             fontSize = 20.sp)
     }

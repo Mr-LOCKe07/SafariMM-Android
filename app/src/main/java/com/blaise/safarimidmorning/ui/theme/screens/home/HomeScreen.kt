@@ -43,24 +43,23 @@ fun Home_Screen(navController: NavHostController) {
         verticalArrangement = Arrangement.Center) {
         Text(text = "Welcome to,",
             color = Color.White,
-            fontSize = 50.sp,
-            fontFamily = FontFamily.Cursive,
-            fontWeight = FontWeight.Bold
+            fontSize = 40.sp,
+            fontFamily = FontFamily.Serif
         )
 
         Spacer(modifier = Modifier.height(20.dp))
-        Image(painter = painterResource(id = R.drawable.logo),
-        contentDescription = "logo",
-        modifier = Modifier
-            .fillMaxWidth()
-            .height(200.dp))
+        Text(text = "Frontier",
+            fontSize = 130.sp,
+            color = Color.White,
+            fontFamily = FontFamily.Cursive,
+            fontWeight = FontWeight.ExtraBold)
 
         Spacer(modifier = Modifier.height(20.dp))
             Text(
                 text = "An app with unimaginable potential, all at your fingertips.",
                 color = Color.White,
                 fontSize = 20.sp,
-                fontFamily = FontFamily.SansSerif
+                fontFamily = FontFamily.Serif
             )
         Spacer(modifier = Modifier.height(50.dp))
         Button(onClick = { navController.navigate(ROUTE_LOGIN)},
