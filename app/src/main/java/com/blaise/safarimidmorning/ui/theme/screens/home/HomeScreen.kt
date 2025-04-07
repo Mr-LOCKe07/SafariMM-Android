@@ -30,6 +30,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.blaise.safarimidmorning.R
+import com.blaise.safarimidmorning.navigation.ROUTE_DASHBOARD
 import com.blaise.safarimidmorning.navigation.ROUTE_LOGIN
 import com.blaise.safarimidmorning.navigation.ROUTE_REGISTER
 
@@ -61,6 +62,7 @@ fun Home_Screen(navController: NavHostController) {
                 fontSize = 20.sp,
                 fontFamily = FontFamily.Serif
             )
+
         Spacer(modifier = Modifier.height(50.dp))
         Button(onClick = { navController.navigate(ROUTE_LOGIN)},
             modifier = Modifier.width(300.dp),
@@ -89,6 +91,20 @@ fun Home_Screen(navController: NavHostController) {
                 color = Color.Cyan,
                 fontFamily = FontFamily.Serif,
             )
+        }
+
+        Spacer(modifier = Modifier.height(50.dp))
+        Button(onClick = { navController.navigate(ROUTE_DASHBOARD)},
+            modifier = Modifier.width(300.dp),
+            colors = ButtonDefaults.buttonColors(
+                containerColor = Color.Transparent
+            ),
+            border = BorderStroke(2.dp, Color.White)
+        ) {
+            Text(text = "Dashboard",
+                fontSize = 30.sp,
+                color = Color.Magenta,
+                fontFamily = FontFamily.Serif)
         }
     }
 }

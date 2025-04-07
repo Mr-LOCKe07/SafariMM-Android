@@ -31,5 +31,8 @@ fun AppNavHost(modifier: Modifier = Modifier,
         composable(ROUTE_SPLASH) {
             Splash_Screen(navController)
         }
+        composable(ROUTE_DASHBOARD) {
+            Dashboard_Screen()
+        }
         }
     }
