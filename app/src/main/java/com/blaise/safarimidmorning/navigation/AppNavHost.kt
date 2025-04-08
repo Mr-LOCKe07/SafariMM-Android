@@ -7,6 +7,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.blaise.safarimidmorning.ui.theme.screens.dashboard.Dashboard_Screen
 import com.blaise.safarimidmorning.ui.theme.screens.home.Home_Screen
 import com.blaise.safarimidmorning.ui.theme.screens.login.Login_Screen
 import com.blaise.safarimidmorning.ui.theme.screens.register.Register_Screen
